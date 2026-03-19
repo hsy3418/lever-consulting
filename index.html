@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lever Consulting — Helping Small Businesses Do More With Less</title>
+  <meta name="description" content="Lever Consulting helps Melbourne small business owners save time, get online, and find smarter ways to work. No jargon, no fluff — just results.">
+  <meta name="keywords" content="small business consulting, Melbourne, business operations, get online, SMB, efficiency">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #1a5632;
+      --primary-light: #e8f5ec;
+      --accent: #d4a843;
+      --dark: #1a1a2e;
+      --text: #333;
+      --text-light: #666;
+      --bg: #fafafa;
+      --white: #fff;
+      --radius: 12px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Nav */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(10px);
+      z-index: 100;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    .logo span {
+      color: var(--accent);
+    }
+
+    nav a.cta-nav {
+      background: var(--primary);
+      color: var(--white);
+      padding: 0.6rem 1.5rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.9rem;
+      transition: background 0.3s;
+    }
+
+    nav a.cta-nav:hover {
+      background: #144426;
+    }
+
+    /* Hero */
+    .hero {
+      padding: 10rem 2rem 6rem;
+      text-align: center;
+      background: linear-gradient(135deg, var(--white) 0%, var(--primary-light) 100%);
+    }
+
+    .hero h1 {
+      font-size: clamp(2.2rem, 5vw, 3.5rem);
+      font-weight: 700;
+      color: var(--dark);
+      max-width: 700px;
+      margin: 0 auto 1.5rem;
+      line-height: 1.2;
+    }
+
+    .hero p {
+      font-size: clamp(1.05rem, 2.5vw, 1.25rem);
+      color: var(--text-light);
+      max-width: 560px;
+      margin: 0 auto 2.5rem;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background: var(--primary);
+      color: var(--white);
+      padding: 1rem 2.5rem;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.1rem;
+      transition: all 0.3s;
+      box-shadow: 0 4px 14px rgba(26,86,50,0.3);
+    }
+
+    .cta-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(26,86,50,0.4);
+    }
+
+    .hero-sub {
+      margin-top: 1rem;
+      font-size: 0.9rem;
+      color: var(--text-light);
+    }
+
+    /* Sections */
+    section {
+      padding: 5rem 2rem;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 1rem;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      color: var(--text-light);
+      max-width: 550px;
+      margin: 0 auto 3rem;
+      font-size: 1.05rem;
+    }
+
+    /* Problem */
+    .problem {
+      background: var(--white);
+    }
+
+    .problem-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .problem-card {
+      background: #fef9f0;
+      border-left: 4px solid var(--accent);
+      padding: 1.5rem;
+      border-radius: 0 var(--radius) var(--radius) 0;
+    }
+
+    .problem-card p {
+      color: var(--text);
+      font-size: 1rem;
+    }
+
+    .problem-card .emoji {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+
+    /* Services */
+    .services {
+      background: var(--bg);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .service-card {
+      background: var(--white);
+      padding: 2rem;
+      border-radius: var(--radius);
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    }
+
+    .service-icon {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .service-card h3 {
+      font-size: 1.2rem;
+      color: var(--dark);
+      margin-bottom: 0.75rem;
+    }
+
+    .service-card p {
+      color: var(--text-light);
+      font-size: 0.95rem;
+    }
+
+    /* How it works */
+    .how-it-works {
+      background: var(--white);
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .step {
+      text-align: center;
+      padding: 1.5rem;
+    }
+
+    .step-number {
+      width: 50px;
+      height: 50px;
+      background: var(--primary);
+      color: var(--white);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 1.2rem;
+      margin: 0 auto 1rem;
+    }
+
+    .step h3 {
+      color: var(--dark);
+      margin-bottom: 0.5rem;
+    }
+
+    .step p {
+      color: var(--text-light);
+      font-size: 0.95rem;
+    }
+
+    .step-arrow {
+      display: none;
+    }
+
+    /* About */
+    .about {
+      background: var(--bg);
+    }
+
+    .about-content {
+      max-width: 700px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .about-content p {
+      font-size: 1.05rem;
+      color: var(--text);
+      margin-bottom: 1rem;
+    }
+
+    .about-highlights {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin-top: 2rem;
+    }
+
+    .highlight {
+      text-align: center;
+    }
+
+    .highlight .number {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .highlight .label {
+      font-size: 0.85rem;
+      color: var(--text-light);
+    }
+
+    /* CTA Section */
+    .final-cta {
+      background: linear-gradient(135deg, var(--primary) 0%, #1a3d5c 100%);
+      text-align: center;
+      padding: 5rem 2rem;
+    }
+
+    .final-cta h2 {
+      color: var(--white);
+      font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+      margin-bottom: 1rem;
+    }
+
+    .final-cta p {
+      color: rgba(255,255,255,0.8);
+      max-width: 500px;
+      margin: 0 auto 2rem;
+      font-size: 1.05rem;
+    }
+
+    .cta-button-light {
+      display: inline-block;
+      background: var(--white);
+      color: var(--primary);
+      padding: 1rem 2.5rem;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.1rem;
+      transition: all 0.3s;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.2);
+    }
+
+    .cta-button-light:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+    }
+
+    /* Footer */
+    footer {
+      background: var(--dark);
+      color: rgba(255,255,255,0.6);
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.9rem;
+    }
+
+    footer a {
+      color: rgba(255,255,255,0.8);
+      text-decoration: none;
+    }
+
+    /* Mobile */
+    @media (max-width: 768px) {
+      nav {
+        padding: 0.8rem 1rem;
+      }
+
+      .hero {
+        padding: 8rem 1.5rem 4rem;
+      }
+
+      section {
+        padding: 3.5rem 1.5rem;
+      }
+
+      .about-highlights {
+        gap: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Nav -->
+  <nav>
+    <a href="#" class="logo">Lever<span>.</span></a>
+    <a href="#contact" class="cta-nav">Let's Talk</a>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <h1>Helping small businesses do more with less</h1>
+    <p>You're great at what you do. But the admin, the marketing, the tech stuff — it's eating your time. I can help.</p>
+    <a href="#contact" class="cta-button">Book a Free Chat</a>
+    <p class="hero-sub">30 minutes. No cost. No pressure.</p>
+  </section>
+
+  <!-- Problem -->
+  <section class="problem">
+    <h2 class="section-title">Sound familiar?</h2>
+    <p class="section-subtitle">Most small business owners I talk to are dealing with the same things.</p>
+    <div class="problem-grid">
+      <div class="problem-card">
+        <span class="emoji">😤</span>
+        <p><strong>No online presence</strong> — customers can't find you, and you're losing business to competitors who show up on Google.</p>
+      </div>
+      <div class="problem-card">
+        <span class="emoji">⏰</span>
+        <p><strong>Drowning in admin</strong> — you spend your evenings on spreadsheets, invoices, and emails instead of with your family.</p>
+      </div>
+      <div class="problem-card">
+        <span class="emoji">🤷</span>
+        <p><strong>Know you should do more</strong> — but you don't know where to start, and you don't have time to figure it out.</p>
+      </div>
+      <div class="problem-card">
+        <span class="emoji">💸</span>
+        <p><strong>Costs keep rising</strong> — suppliers, rent, wages. You need smarter ways to operate, not just harder work.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="services">
+    <h2 class="section-title">How I can help</h2>
+    <p class="section-subtitle">No jargon. No overcomplicating things. Just practical solutions that save you time and money.</p>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">🌐</div>
+        <h3>Get You Online</h3>
+        <p>A proper website, Google Business listing, and social media presence — so customers can actually find you.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">⚙️</div>
+        <h3>Streamline Operations</h3>
+        <p>Find the bottlenecks in your day-to-day and fix them. Less manual work, fewer mistakes, more time for what matters.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🔍</div>
+        <h3>Find Better Solutions</h3>
+        <p>Whether it's better suppliers, smarter tools, or new opportunities — I research and recommend what actually works for your business.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🤝</div>
+        <h3>Bridge the Gap</h3>
+        <p>Bilingual in English and Mandarin. I help Melbourne businesses connect with international suppliers and partners.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section class="how-it-works">
+    <h2 class="section-title">How it works</h2>
+    <p class="section-subtitle">Simple process. No surprises.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="step-number">1</div>
+        <h3>We talk</h3>
+        <p>30-minute chat about your business. What's working, what's not, where your time goes.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">2</div>
+        <h3>I dig in</h3>
+        <p>I map out your operations and find the biggest opportunities to save you time and money.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">3</div>
+        <h3>We fix it</h3>
+        <p>I set up the solutions, train you or your team, and make sure everything works.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="about">
+    <h2 class="section-title">About</h2>
+    <div class="about-content">
+      <p>I'm Heaven — a Melbourne-based consultant with a background in software engineering and technology. I started Lever because I saw too many good business owners stuck doing work that could be done better, faster, or not at all.</p>
+      <p>I don't sell you things you don't need. I sit down, understand your problem, and find the simplest solution that works. Sometimes that's a website. Sometimes it's a better supplier. Sometimes it's just a smarter way of doing what you already do.</p>
+      <div class="about-highlights">
+        <div class="highlight">
+          <div class="number">10+</div>
+          <div class="label">Years in tech</div>
+        </div>
+        <div class="highlight">
+          <div class="number">2</div>
+          <div class="label">Languages</div>
+        </div>
+        <div class="highlight">
+          <div class="number">🇦🇺</div>
+          <div class="label">Melbourne based</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="final-cta" id="contact">
+    <h2>Let's have a chat</h2>
+    <p>30 minutes, no cost, no pressure. Just a conversation about your business and where I might be able to help.</p>
+    <a href="mailto:hello@leverconsulting.com.au" class="cta-button-light">Get in Touch</a>
+    <p style="margin-top: 1.5rem; color: rgba(255,255,255,0.6); font-size: 0.9rem;">
+      📧 hello@leverconsulting.com.au · 📱 +61 XXX XXX XXX
+    </p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 Lever Consulting. Melbourne, Australia.</p>
+  </footer>
+
+</body>
+</html>
