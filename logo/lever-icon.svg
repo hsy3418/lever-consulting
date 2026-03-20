@@ -1,0 +1,14 @@
+<svg width="120" height="120" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+  <!-- Dark background -->
+  <rect width="120" height="120" rx="24" fill="#1a1a2e"/>
+  <!-- Lever beam -->
+  <line x1="25" y1="68" x2="95" y2="52" stroke="#d4a843" stroke-width="4" stroke-linecap="round"/>
+  <!-- Fulcrum -->
+  <polygon points="68,70 62,80 74,80" fill="#d4a843"/>
+  <!-- Small dot -->
+  <circle cx="25" cy="68" r="4.5" fill="rgba(255,255,255,0.6)"/>
+  <!-- Big dot -->
+  <circle cx="95" cy="52" r="9" fill="#d4a843"/>
+  <!-- L -->
+  <text x="60" y="48" text-anchor="middle" font-family="Inter, Helvetica, Arial, sans-serif" font-size="32" font-weight="800" fill="#ffffff">L</text>
+</svg>

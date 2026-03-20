@@ -1,0 +1,16 @@
+<svg width="400" height="160" viewBox="0 0 400 160" xmlns="http://www.w3.org/2000/svg">
+  <!-- Dark background -->
+  <rect width="400" height="160" rx="0" fill="#1a1a2e"/>
+  <!-- Text -->
+  <text x="200" y="72" text-anchor="middle" font-family="Inter, Helvetica, Arial, sans-serif" font-size="52" font-weight="800" fill="#ffffff">LEVER</text>
+  <!-- Lever beam underline — tilted -->
+  <line x1="68" y1="95" x2="332" y2="80" stroke="#d4a843" stroke-width="4.5" stroke-linecap="round"/>
+  <!-- Fulcrum triangle -->
+  <polygon points="230,95 221,108 239,108" fill="#d4a843"/>
+  <!-- Small dot on effort side -->
+  <circle cx="68" cy="95" r="5" fill="rgba(255,255,255,0.6)"/>
+  <!-- Bigger dot on result side being lifted -->
+  <circle cx="332" cy="80" r="10" fill="#d4a843"/>
+  <!-- Subtitle -->
+  <text x="200" y="135" text-anchor="middle" font-family="Inter, Helvetica, Arial, sans-serif" font-size="14" font-weight="400" letter-spacing="5" fill="rgba(255,255,255,0.4)">CONSULTING</text>
+</svg>
