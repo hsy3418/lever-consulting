@@ -1,13 +1,12 @@
-# Client 002: Purifly (小猪)
+# Client 002: Purifly Crafter
 
 ## Overview
-- **Client**: 小猪 (Xiaozhu, "Piggy")
+- **Client**: Purifly Crafter
 - **Brand**: Purifly Crafter
 - **Platform**: Xiaohongshu (小红书)
-- **Location**: China (浙江/上海)
-- **Status**: Relationship (Heaven's ex-girlfriend, reconnected April 2026)
-- **Business type**: Solo artisan, beadwork + Lunéville (法绣) embroidery
-- **Engagement**: Pro bono (personal project, not Lever Consulting client)
+- **Location**: China (Shanghai)
+- **Business type**: Solo artisan, beadwork + Luneville (法绣) embroidery
+- **Engagement**: Case study / pro bono consulting
 
 ## Current State
 - **Xiaohongshu followers**: ~152
